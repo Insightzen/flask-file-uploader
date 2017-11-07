@@ -12,7 +12,7 @@ File Upload Script which built on Python Flask and [jQuery-File-Upload](https://
 ```
 conda create -n webgui python=2.7
 source activate webgui
-git clone https://github.com/ngoduykhanh/flask-file-uploader.git
+https://github.com/Insightzen/flask-file-uploader.git
 cd flask-file-uploader
 pip install -r requirements.txt
 python app.py

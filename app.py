@@ -21,10 +21,10 @@ from lib.upload_file import uploadfile
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 app.config['UPLOAD_FOLDER'] = 'data/'
-app.config['THUMBNAIL_FOLDER'] = 'data/thumbnail/'
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
+#app.config['THUMBNAIL_FOLDER'] = 'data/thumbnail/'
+#app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
-ALLOWED_EXTENSIONS = set(['txt', 'gif', 'png', 'jpg', 'jpeg', 'bmp', 'rar', 'zip', '7zip', 'doc', 'docx'])
+ALLOWED_EXTENSIONS = set(['json'])
 IGNORED_FILES = set(['.gitignore'])
 
 bootstrap = Bootstrap(app)
@@ -84,8 +84,8 @@ def upload():
                 files.save(uploaded_file_path)
 
                 # create thumbnail after saving
-                if mime_type.startswith('image'):
-                    create_thumbnail(filename)
+                #if mime_type.startswith('image'):
+                #   create_thumbnail(filename)
                 
                 # get file size after saving
                 size = os.path.getsize(uploaded_file_path)

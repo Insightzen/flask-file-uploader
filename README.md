@@ -6,8 +6,6 @@ File Upload Script which built on Python Flask and [jQuery-File-Upload](https://
 
 
 ## Setup
-- Install system package. See the `system_package.txt` file. (*Unix)
-
 - Create virtual enviroment (use `virtualenv`) and activate it.
 ```
 conda create -n webgui python=2.7

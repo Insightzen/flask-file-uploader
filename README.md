@@ -9,17 +9,13 @@ File Upload Script which built on Python Flask and [jQuery-File-Upload](https://
 - Install system package. See the `system_package.txt` file. (*Unix)
 
 - Create virtual enviroment (use `virtualenv`) and activate it.
-
-- Then install python packages:  
 ```
-$ pip install -r requirements.txt
+conda create -n playground_py27 python=2.7
+source activate playground_py27
+git clone https://github.com/ngoduykhanh/flask-file-uploader.git
+cd flask-file-uploader
+pip install -r requirements.txt
+python app.py
 ```
-
-- Run it:
-
-```
-$ python app.py
-```
-
 - Go to http://127.0.0.1
 

@@ -6,8 +6,6 @@
 # This work based on jQuery-File-Upload which can be found at https://github.com/blueimp/jQuery-File-Upload/
 
 import os
-import PIL
-from PIL import Image
 import simplejson
 import traceback
 
@@ -47,22 +45,6 @@ def gen_file_name(filename):
         i += 1
 
     return filename
-
-
-def create_thumbnail(image):
-    try:
-        base_width = 80
-        img = Image.open(os.path.join(app.config['UPLOAD_FOLDER'], image))
-        w_percent = (base_width / float(img.size[0]))
-        h_size = int((float(img.size[1]) * float(w_percent)))
-        img = img.resize((base_width, h_size), PIL.Image.ANTIALIAS)
-        img.save(os.path.join(app.config['THUMBNAIL_FOLDER'], image))
-
-        return True
-
-    except:
-        print traceback.format_exc()
-        return False
 
 
 @app.route("/upload", methods=['GET', 'POST'])
